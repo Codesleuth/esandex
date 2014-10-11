@@ -1,0 +1,79 @@
+#%RAML 0.8
+---
+title: Esendex API Sandbox
+baseUri: https://api.esendex.com/{version}
+version: v1.0
+securitySchemes:
+  - basicAuth:
+      description: Esendex requires Basic Authentication for every API request.
+      type: Basic Authentication
+securedBy: [basicAuth]
+traits:
+  - paged:
+      queryParameters:
+        startindex:
+          description: The zero-based index of the first resource to return
+        count:
+          description: The number of resources to return
+          type: number
+schemas:
+  - MessageHeadersGetAll: !include schemas/requests/messageheaders-get-all.xsd
+    MessageDispatcherPost: !include schemas/responses/messagedispatcher-post.xsd
+/accounts:
+  displayName: Accounts
+  get:
+    securedBy: [basicAuth]
+    responses:
+      200:
+        body:
+          application/xml:
+            example: !include examples/accounts-get-all.xml
+  /{accountId}:
+    uriParameters:
+      accountId:
+        displayName: Account ID
+        type: string
+        pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
+        minLength: 36
+        maxLength: 36
+    get:
+      responses:
+        200:
+          body:
+            application/xml:
+              example: !include examples/accounts-get-single.xml
+/messageheaders:
+  displayName: Message Headers
+  get:
+    is: [paged]
+    responses:
+      200:
+        body:
+          application/xml:
+            schema: MessageHeadersGetAll
+            example: !include examples/messageheaders-get-all.xml
+  /{messageHeaderId}:
+    uriParameters:
+      messageHeaderId:
+        displayName: Message Header ID
+        type: string
+        pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
+        minLength: 36
+        maxLength: 36
+    get:
+      responses:
+        200:
+          body:
+            application/xml:
+              example: !include examples/messageheaders-get-single.xml
+/messagedispatcher:
+  displayName: Message Dispatcher
+  post:
+    body:
+      application/xml:
+        schema: MessageDispatcherPost
+    responses:
+      200:
+        body:
+          application/xml:
+            example: !include examples/messagedispatcher-post.xml
