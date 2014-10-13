@@ -18,7 +18,8 @@ traits:
           type: number
 schemas:
   - MessageHeadersGetAll: !include schemas/requests/messageheaders-get-all.xsd
-    MessageDispatcherPost: !include schemas/responses/messagedispatcher-post.xsd
+  - MessageDispatcherPostRequest: !include schemas/requests/messagedispatcher-post.xsd
+  - MessageDispatcherPostResponse: !include schemas/responses/messagedispatcher-post.xsd
 /accounts:
   displayName: Accounts
   get:
@@ -27,7 +28,7 @@ schemas:
       200:
         body:
           application/xml:
-            example: !include examples/accounts-get-all.xml
+            example: !include examples/responses/accounts-get-all.xml
   /{accountId}:
     uriParameters:
       accountId:
@@ -41,7 +42,7 @@ schemas:
         200:
           body:
             application/xml:
-              example: !include examples/accounts-get-single.xml
+              example: !include examples/responses/accounts-get-single.xml
 /messageheaders:
   displayName: Message Headers
   get:
@@ -51,7 +52,7 @@ schemas:
         body:
           application/xml:
             schema: MessageHeadersGetAll
-            example: !include examples/messageheaders-get-all.xml
+            example: !include examples/responses/messageheaders-get-all.xml
   /{messageHeaderId}:
     uriParameters:
       messageHeaderId:
@@ -65,15 +66,16 @@ schemas:
         200:
           body:
             application/xml:
-              example: !include examples/messageheaders-get-single.xml
+              example: !include examples/responses/messageheaders-get-single.xml
 /messagedispatcher:
   displayName: Message Dispatcher
   post:
     body:
       application/xml:
-        schema: MessageDispatcherPost
+        schema: MessageDispatcherPostRequest
+        example: !include examples/requests/messagedispatcher-post.xml
     responses:
       200:
         body:
           application/xml:
-            example: !include examples/messagedispatcher-post.xml
+            example: !include examples/responses/messagedispatcher-post.xml

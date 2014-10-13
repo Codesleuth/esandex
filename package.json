@@ -1,10 +1,11 @@
 {
   "name": "esendex-sandbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight sandbox representation of the Esendex REST API.",
   "private": true,
   "dependencies": {
-    "express": "3.4.4",
+    "express": "3.7.0",
+    "express-xml-bodyparser": "0.0.4",
     "morgan": "^1.3.2",
     "osprey": "git://github.com/codesleuth/osprey.git#master"
   },
