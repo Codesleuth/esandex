@@ -1,0 +1,14 @@
+# Site settings
+title: Esandex
+email: david.p.wood@gmail.com
+description: A lightweight API sandbox for the Esendex REST API.
+baseurl: "/esandex"
+url: "http://www.codesleuth.co.uk"
+
+# Build settings
+markdown: redcarpet
+highlighter: pygments
+github: https://github.com/codesleuth/esandex
+
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
