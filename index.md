@@ -56,4 +56,4 @@ Contributions are welcome! Fork the project [over on GitHub](https://github.com/
 [esendex]: https://www.esendex.com
 [rest-api-docs]: http://developers.esendex.com/APIs/REST-API
 [v1.0-raml]: https://raw.githubusercontent.com/Codesleuth/esandex/master/raml/v1.0/api.raml
-[v1.0-docs]: {{ site.baseurl }}/v1.0/api.html
+[v1.0-docs]: v1.0/api.html
