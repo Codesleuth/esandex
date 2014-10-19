@@ -2,7 +2,6 @@
   "name": "esandex",
   "version": "0.0.2",
   "description": "A lightweight sandbox representation of the Esendex REST API.",
-  "private": true,
   "main": "lib/index.js",
   "bin": {
     "esandex": "./bin/esandex.js"
@@ -28,10 +27,6 @@
   },
   "devDependencies": {
     "gulp": "^3.8.8",
-    "gulp-raml2html": "^0.1.7",
-    "gulp-shell": "^0.2.10",
-    "gulp-util": "^3.0.1",
-    "raml2html": "^1.0.4",
-    "through2": "^0.6.3"
+    "gulp-raml2html": "^0.1.7"
   }
 }
