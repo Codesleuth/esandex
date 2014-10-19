@@ -14,4 +14,7 @@ $code-font-family: 'Source Code Pro', monospace;
 $text-color:       #3F3F3F;
 $background-color: #F6F6F6;
 
+$on-palm:          400px;
+$on-laptop:        800px;
+
 @import "base","layout";
