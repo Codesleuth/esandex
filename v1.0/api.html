@@ -1,0 +1,236 @@
+<!DOCTYPE HTML><html><head><title>Esendex API documentation</title><meta http-equiv=X-UA-Compatible content="IE=edge"><meta http-equiv=Content-Type content="text/html; charset=utf-8"><meta name=generator content="https://github.com/kevinrenskers/raml2html 0.30.0"><link rel=stylesheet href=http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css><link rel=stylesheet href=http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css><script type=text/javascript src=http://code.jquery.com/jquery-1.11.0.min.js></script><script type=text/javascript src=http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js></script><script type=text/javascript src=http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js></script><script type=text/javascript>
+        $(document).ready(function() {
+            $('.page-header pre code, .top-resource-description pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+
+            $('[data-toggle]').click(function() {
+                var selector = $(this).data('target') + ' pre code';
+                $(selector).each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });
+            });
+        });
+    </script><style>
+        .hljs {
+            background: transparent;
+        }
+        .parent {
+            color: #999;
+        }
+        .list-group-item > .badge {
+            float: none;
+            margin-right: 6px;
+        }
+        .panel-title > .methods {
+            float: right;
+        }
+        .badge {
+            border-radius: 0;
+            text-transform: uppercase;
+            width: 70px;
+            font-weight: normal;
+            color: #f3f3f6;
+            line-height: normal;
+        }
+        .badge_get {
+            background-color: #63a8e2;
+        }
+        .badge_post {
+            background-color: #6cbd7d;
+        }
+        .badge_put {
+            background-color: #22bac4;
+        }
+        .badge_delete {
+            background-color: #d26460;
+        }
+        .list-group, .panel-group {
+            margin-bottom: 0;
+        }
+        .panel-group .panel+.panel-white {
+            margin-top: 0;
+        }
+        .panel-group .panel-white {
+            border-bottom: 1px solid #F5F5F5;
+            border-radius: 0;
+        }
+        .panel-white:last-child {
+            border-bottom-color: white;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .panel-white .panel-heading {
+            background: white;
+        }
+        .tab-pane ul {
+            padding-left: 2em;
+        }
+        .tab-pane h2 {
+            font-size: 1.2em;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-pane h3 {
+            font-size: 1.1em;
+        }
+        .tab-content {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+        #sidebar {
+            margin-top: 30px;
+        }
+        .top-resource-description {
+            border-bottom: 1px solid #ddd;
+            background: #fcfcfc;
+            padding: 15px 15px 0 15px;
+            margin: -15px -15px 10px -15px;
+        }
+        .resource-description {
+            border-bottom: 1px solid #fcfcfc;
+            background: #fcfcfc;
+            padding: 15px 15px 0 15px;
+            margin: -15px -15px 10px -15px;
+        }
+        .panel > .panel-body > .panel-group > .panel:first-child .resource-description {
+            display: none;
+        }
+        .list-group .badge {
+            float: left;
+        }
+        .method_description {
+            margin-left: 85px;
+        }
+        .method_description p:last-child {
+            margin: 0;
+        }
+    </style></head><body data-spy=scroll data-target=#sidebar><div class=container><div class=row><div class=col-md-9 role=main><div class=page-header><h1>Esendex API documentation <small>version v1.0</small></h1><p>https://api.esendex.com/v1.0</p></div><div class="panel panel-default"><div class=panel-heading><h3 id=_accounts class=panel-title>Accounts</h3></div><div class=panel-body><div class=panel-group><div class="panel panel-white"><div class=panel-heading><h4 class=panel-title><a class=collapsed data-toggle=collapse href=#panel__accounts><span class=parent></span>/accounts</a> <span class=methods><a href=# data-toggle=modal data-target=#_accounts_get><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id=panel__accounts class="panel-collapse collapse"><div class=panel-body><div class=list-group><a href=# data-toggle=modal data-target=#_accounts_get class=list-group-item><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class=method_description></div><div class=clearfix></div></a></div></div></div><div class="modal fade" tabindex=0 id=_accounts_get><div class=modal-dialog><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-hidden=true>&times;</button><h4 class=modal-title id=myModalLabel><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class=parent></span>/accounts</h4></div><div class=modal-body><div class="alert alert-info"></div><ul class="nav nav-tabs"><li class=active><a href=#_accounts_get_request data-toggle=tab>Request</a></li><li><a href=#_accounts_get_response data-toggle=tab>Response</a></li></ul><div class=tab-content><div class="tab-pane active" id=_accounts_get_request></div><div class=tab-pane id=_accounts_get_response><h2>HTTP status code <a href=http://httpstatus.es/200 target=_blank>200</a></h2><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><small><strong>Example</strong>:<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt; 
+&lt;accounts xmlns="http://api.esendex.com/ns/"&gt; 
+  &lt;account id="A00F0218-510D-423D-A74E-5A65342FE070" uri="http://api.esendex.com/v1.0/accounts/A00F0218-510D-423D-A74E-5A65342FE070"&gt; 
+    &lt;reference&gt;EX0000000&lt;/reference&gt; 
+    &lt;label&gt;EX0000000&lt;/label&gt; 
+    &lt;address&gt;447700900654&lt;/address&gt; 
+    &lt;type&gt;Professional&lt;/type&gt; 
+    &lt;messagesremaining&gt;2000&lt;/messagesremaining&gt; 
+    &lt;expireson&gt;2999-02-25T00:00:00&lt;/expireson&gt; 
+    &lt;role&gt;PowerUser&lt;/role&gt; 
+    &lt;settings uri="http://api.esendex.com/v1.0/accounts/A00F0218-510D-423D-A74E-5A65342FE070/settings" /&gt; 
+  &lt;/account&gt; 
+&lt;/accounts&gt;</code></pre></small></p></div></div></div></div></div></div></div><div class="panel panel-white"><div class=panel-heading><h4 class=panel-title><a class=collapsed data-toggle=collapse href=#panel__accounts__accountId_><span class=parent>/accounts</span>/{accountId}</a> <span class=methods><a href=# data-toggle=modal data-target=#_accounts__accountId__get><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id=panel__accounts__accountId_ class="panel-collapse collapse"><div class=panel-body><div class=list-group><a href=# data-toggle=modal data-target=#_accounts__accountId__get class=list-group-item><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class=method_description></div><div class=clearfix></div></a></div></div></div><div class="modal fade" tabindex=0 id=_accounts__accountId__get><div class=modal-dialog><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-hidden=true>&times;</button><h4 class=modal-title id=myModalLabel><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class=parent>/accounts</span>/{accountId}</h4></div><div class=modal-body><div class="alert alert-info"></div><ul class="nav nav-tabs"><li class=active><a href=#_accounts__accountId__get_request data-toggle=tab>Request</a></li><li><a href=#_accounts__accountId__get_response data-toggle=tab>Response</a></li></ul><div class=tab-content><div class="tab-pane active" id=_accounts__accountId__get_request><h3>URI Parameters</h3><ul><li><strong>Account ID</strong>: <em>required (string)</em></li></ul></div><div class=tab-pane id=_accounts__accountId__get_response><h2>HTTP status code <a href=http://httpstatus.es/200 target=_blank>200</a></h2><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><small><strong>Example</strong>:<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt; 
+    &lt;account id="D35FA8EB-3C12-4E8E-8DEC-8568B2F35890" uri="http://api.esendex.com/v1.0/accounts/D35FA8EB-3C12-4E8E-8DEC-8568B2F35890" xmlns="http://api.esendex.com/ns/"&gt; 
+      &lt;reference&gt;EX0000000&lt;/reference&gt; 
+      &lt;label&gt;EX0000000&lt;/label&gt; 
+      &lt;address&gt;447700900654&lt;/address&gt; 
+      &lt;type&gt;Professional&lt;/type&gt; 
+      &lt;messagesremaining&gt;2000&lt;/messagesremaining&gt; 
+      &lt;expireson&gt;2999-02-25T00:00:00&lt;/expireson&gt; 
+      &lt;role&gt;PowerUser&lt;/role&gt; 
+      &lt;settings uri="http://api.esendex.com/v1.0/accounts/A00F0218-510D-423D-A74E-5A65342FE070/settings" /&gt; 
+    &lt;/account&gt;</code></pre></small></p></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class=panel-heading><h3 id=_messageheaders class=panel-title>Message Headers</h3></div><div class=panel-body><div class=panel-group><div class="panel panel-white"><div class=panel-heading><h4 class=panel-title><a class=collapsed data-toggle=collapse href=#panel__messageheaders><span class=parent></span>/messageheaders</a> <span class=methods><a href=# data-toggle=modal data-target=#_messageheaders_get><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id=panel__messageheaders class="panel-collapse collapse"><div class=panel-body><div class=list-group><a href=# data-toggle=modal data-target=#_messageheaders_get class=list-group-item><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class=method_description></div><div class=clearfix></div></a></div></div></div><div class="modal fade" tabindex=0 id=_messageheaders_get><div class=modal-dialog><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-hidden=true>&times;</button><h4 class=modal-title id=myModalLabel><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class=parent></span>/messageheaders</h4></div><div class=modal-body><div class="alert alert-info"></div><ul class="nav nav-tabs"><li class=active><a href=#_messageheaders_get_request data-toggle=tab>Request</a></li><li><a href=#_messageheaders_get_response data-toggle=tab>Response</a></li></ul><div class=tab-content><div class="tab-pane active" id=_messageheaders_get_request><h3>Query Parameters</h3><ul><li><strong>startindex</strong> <em>(string)</em><p>The zero-based index of the first resource to return</p></li><li><strong>count</strong> <em>(number)</em><p>The number of resources to return</p></li></ul></div><div class=tab-pane id=_messageheaders_get_response><h2>HTTP status code <a href=http://httpstatus.es/200 target=_blank>200</a></h2><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><small><strong>Schema</strong>:<pre><code>MessageHeadersGetAll</code></pre></small></p><p><small><strong>Example</strong>:<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt; 
+&lt;messageheaders startindex="0" count="15" totalcount="200" xmlns="http://api.esendex.com/ns/"&gt; 
+  &lt;messageheader id="1B9A0D33-4B76-4A9D-919C-1165A9CF1565" uri="http://api.esendex.com/v1.0/messageheaders/1B9A0D33-4B76-4A9D-919C-1165A9CF1565/"&gt;
+    &lt;reference&gt;EX0000000&lt;/reference&gt; 
+    &lt;status&gt;Delivered&lt;/status&gt; 
+    &lt;laststatusat&gt;2012-01-01T12:00:05.000&lt;/laststatusat&gt; 
+    &lt;submittedat&gt;2012-01-01T12:00:02.000&lt;/submittedat&gt; 
+    &lt;type&gt;SMS&lt;/type&gt; 
+    &lt;to&gt; 
+      &lt;phonenumber&gt;447700900123&lt;/phonenumber&gt; 
+    &lt;/to&gt;
+    &lt;from&gt; 
+     &lt;phonenumber&gt;447700900654&lt;/phonenumber&gt; 
+    &lt;/from&gt; 
+    &lt;summary&gt;Testing REST API&lt;/summary&gt; 
+    &lt;body uri="http://api.esendex.com/v1.0/messageheaders/1B9A0D33-4B76-4A9D-919C-1165A9CF1565/body"/&gt; 
+    &lt;direction&gt;Outbound&lt;/direction&gt; 
+    &lt;parts&gt;1&lt;/parts&gt; 
+    &lt;username&gt;user@example.com&lt;/username&gt; 
+  &lt;/messageheader&gt;
+&lt;/messageheaders&gt;</code></pre></small></p></div></div></div></div></div></div></div><div class="panel panel-white"><div class=panel-heading><h4 class=panel-title><a class=collapsed data-toggle=collapse href=#panel__messageheaders__messageHeaderId_><span class=parent>/messageheaders</span>/{messageHeaderId}</a> <span class=methods><a href=# data-toggle=modal data-target=#_messageheaders__messageHeaderId__get><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id=panel__messageheaders__messageHeaderId_ class="panel-collapse collapse"><div class=panel-body><div class=list-group><a href=# data-toggle=modal data-target=#_messageheaders__messageHeaderId__get class=list-group-item><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class=method_description></div><div class=clearfix></div></a></div></div></div><div class="modal fade" tabindex=0 id=_messageheaders__messageHeaderId__get><div class=modal-dialog><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-hidden=true>&times;</button><h4 class=modal-title id=myModalLabel><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class=parent>/messageheaders</span>/{messageHeaderId}</h4></div><div class=modal-body><div class="alert alert-info"></div><ul class="nav nav-tabs"><li class=active><a href=#_messageheaders__messageHeaderId__get_request data-toggle=tab>Request</a></li><li><a href=#_messageheaders__messageHeaderId__get_response data-toggle=tab>Response</a></li></ul><div class=tab-content><div class="tab-pane active" id=_messageheaders__messageHeaderId__get_request><h3>URI Parameters</h3><ul><li><strong>Message Header ID</strong>: <em>required (string)</em></li></ul></div><div class=tab-pane id=_messageheaders__messageHeaderId__get_response><h2>HTTP status code <a href=http://httpstatus.es/200 target=_blank>200</a></h2><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><small><strong>Example</strong>:<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;  
+    &lt;messageheader id="CDEB3533-1F76-46D7-A2A9-0DAF8290F7FC" uri="http://api.esendex.com/v1.0/messageheaders/CDEB3533-1F76-46D7-A2A9-0DAF8290F7FC/" xmlns="http://api.esendex.com/ns/"&gt;  
+      &lt;status&gt;Delivered&lt;/status&gt; 
+      &lt;laststatusat&gt;2010-01-01T12:00:05.000&lt;/laststatusat&gt; 
+      &lt;submittedat&gt;2010-01-01T12:00:02.000&lt;/submittedat&gt; 
+      &lt;type&gt;SMS&lt;/type&gt; 
+      &lt;to&gt; 
+        &lt;phonenumber&gt;447700900123&lt;/phonenumber&gt; 
+      &lt;/to&gt;
+      &lt;from&gt; 
+        &lt;phonenumber&gt;447700900654&lt;/phonenumber&gt; 
+      &lt;/from&gt; 
+      &lt;summary&gt;Testing REST API&lt;/summary&gt; 
+      &lt;body uri="http://api.esendex.com/v1.0/messageheaders/CDEB3533-1F76-46D7-A2A9-0DAF8290F7FC/body"/&gt; 
+      &lt;direction&gt;Outbound&lt;/direction&gt; 
+      &lt;parts&gt;1&lt;/parts&gt; 
+      &lt;username&gt;user@example.com&lt;/username&gt; 
+    &lt;/messageheader&gt;</code></pre></small></p></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class=panel-heading><h3 id=_messagedispatcher class=panel-title>Message Dispatcher</h3></div><div class=panel-body><div class=panel-group><div class="panel panel-white"><div class=panel-heading><h4 class=panel-title><a class=collapsed data-toggle=collapse href=#panel__messagedispatcher><span class=parent></span>/messagedispatcher</a> <span class=methods><a href=# data-toggle=modal data-target=#_messagedispatcher_post><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id=panel__messagedispatcher class="panel-collapse collapse"><div class=panel-body><div class=list-group><a href=# data-toggle=modal data-target=#_messagedispatcher_post class=list-group-item><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class=method_description></div><div class=clearfix></div></a></div></div></div><div class="modal fade" tabindex=0 id=_messagedispatcher_post><div class=modal-dialog><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-hidden=true>&times;</button><h4 class=modal-title id=myModalLabel><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class=parent></span>/messagedispatcher</h4></div><div class=modal-body><div class="alert alert-info"></div><ul class="nav nav-tabs"><li class=active><a href=#_messagedispatcher_post_request data-toggle=tab>Request</a></li><li><a href=#_messagedispatcher_post_response data-toggle=tab>Response</a></li></ul><div class=tab-content><div class="tab-pane active" id=_messagedispatcher_post_request><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><small><strong>Schema</strong>:<pre><code>&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="unqualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+
+  &lt;xs:simpleType name="langType"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:enumeration value="en-GB"/&gt;
+      &lt;xs:enumeration value="en-AU"/&gt;
+      &lt;xs:enumeration value="fr-FR"/&gt;
+      &lt;xs:enumeration value="es-ES"/&gt;
+      &lt;xs:enumeration value="de-DE"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+
+  &lt;xs:simpleType name="charactersetType"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:enumeration value="GSM"/&gt;
+      &lt;xs:enumeration value="Unicode"/&gt;
+      &lt;xs:enumeration value="Auto"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+
+  &lt;xs:simpleType name="typeType"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:enumeration value="SMS"/&gt;
+      &lt;xs:enumeration value="Voice"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+
+  &lt;xs:element name="messages"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="accountreference" type="xs:string" minOccurs="1" maxOccurs="1"/&gt;
+        &lt;xs:element name="from" type="xs:string" minOccurs="0" maxOccurs="1"/&gt;
+        &lt;xs:element name="type" type="typeType" minOccurs="0" maxOccurs="1"/&gt;
+        &lt;xs:element name="retries" type="xs:integer" minOccurs="0" maxOccurs="1"/&gt;
+        &lt;xs:element name="validity" type="xs:integer" minOccurs="0" maxOccurs="1"/&gt;
+        &lt;xs:element name="sendat" type="xs:string" minOccurs="0" maxOccurs="1"/&gt;
+        &lt;xs:element name="characterset" type="charactersetType" minOccurs="0" maxOccurs="1"/&gt;
+        &lt;xs:element name="message" maxOccurs="unbounded"&gt;
+          &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="to" type="xs:string" minOccurs="1" maxOccurs="1"/&gt;
+              &lt;xs:element name="type" type="typeType" minOccurs="0" maxOccurs="1"/&gt;
+              &lt;xs:element name="body" type="xs:string" minOccurs="1" maxOccurs="1"/&gt;
+              &lt;xs:element name="lang" type="langType" minOccurs="0" maxOccurs="1"/&gt;
+              &lt;xs:element name="retries" type="xs:integer" minOccurs="0" maxOccurs="1"/&gt;
+              &lt;xs:element name="validity" type="xs:integer" minOccurs="0" maxOccurs="1"/&gt;
+              &lt;xs:element name="characterset" type="charactersetType" minOccurs="0" maxOccurs="1"/&gt;
+            &lt;/xs:sequence&gt;
+          &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre></small></p><p><small><strong>Example</strong>:<pre><code>&lt;?xml version=&#x27;1.0&#x27; encoding=&#x27;UTF-8&#x27;?&gt;  
+&lt;messages&gt;  
+  &lt;accountreference&gt;EX0000000&lt;/accountreference&gt;
+  &lt;message&gt;
+    &lt;to&gt;447700900123&lt;/to&gt;
+    &lt;body&gt;Every message matters!&lt;/body&gt;
+  &lt;/message&gt;  
+&lt;/messages&gt;</code></pre></small></p></div><div class=tab-pane id=_messagedispatcher_post_response><h2>HTTP status code <a href=http://httpstatus.es/200 target=_blank>200</a></h2><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><small><strong>Example</strong>:<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt; 
+&lt;messageheaders batchid="F8BF9867-FF81-49E4-ACC5-774DE793B776" 
+                xmlns="http://api.esendex.com/ns/"&gt; 
+  &lt;messageheader uri="https://api.esendex.com/v1.0/messageheaders/1183C73D-2E62-4F60-B610-30F160BDFBD5" id="1183C73D-2E62-4F60-B610-30F160BDFBD5" /&gt; 
+&lt;/messageheaders&gt;</code></pre></small></p></div></div></div></div></div></div></div></div></div></div></div><div class=col-md-3><div id=sidebar class="hidden-print affix" role=complementary><ul class="nav nav-pills nav-stacked"><li><a href=#_accounts>Accounts</a></li><li><a href=#_messageheaders>Message Headers</a></li><li><a href=#_messagedispatcher>Message Dispatcher</a></li></ul></div></div></div></div></body></html>
