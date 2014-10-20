@@ -1,6 +1,6 @@
 {
   "name": "esandex",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A lightweight sandbox representation of the Esendex REST API.",
   "main": "lib/index.js",
   "bin": {
