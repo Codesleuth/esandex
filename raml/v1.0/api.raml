@@ -19,6 +19,7 @@ traits:
 schemas:
   - MessageDispatcherPostRequest: !include schemas/requests/messagedispatcher-post.xsd
   - MessageDispatcherPostResponse: !include schemas/responses/messagedispatcher-post.xsd
+  - AccountSettingsPutRequest: !include schemas/requests/accountsettings-put.xsd
 /accounts:
   displayName: Accounts
   get:
@@ -42,6 +43,23 @@ schemas:
           body:
             application/xml:
               example: !include examples/responses/accounts-get-single.xml
+    /settings:
+      get:
+        responses:
+          200:
+            body:
+              application/xml:
+                example: !include examples/responses/accountsettings-get.xml
+      put:
+        body:
+          application/xml:
+            schema: AccountSettingsPutRequest
+            example: !include examples/requests/accountsettings-put.xml
+        responses:
+          200:
+            body:
+              application/xml:
+                example: ""
 /messageheaders:
   displayName: Message Headers
   get:
